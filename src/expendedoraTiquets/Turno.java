@@ -1,7 +1,7 @@
 package expendedoraTiquets;
 
 public class Turno {
-	private int valor;
+	private int valor = 0;
 
 	public int getValor() {
 		return valor;
@@ -9,6 +9,10 @@ public class Turno {
 
 	public void setValor(int valor) {
 		this.valor = valor;
+	}
+	
+	public Turno() {
+		super();
 	}
 
 	public Turno(int valor) {
@@ -18,7 +22,7 @@ public class Turno {
 
 	@Override
 	public String toString() {
-		return "Turno [valor=" + valor + "]";
+		return "" + getValor();
 	}
 	
 }

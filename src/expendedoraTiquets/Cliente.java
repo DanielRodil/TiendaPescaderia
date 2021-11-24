@@ -1,6 +1,6 @@
 package expendedoraTiquets;
 
-public class Cliente {
+public class Cliente implements Comparable<Cliente>{
 	private String nombre;
 	private Turno turno;
 	
@@ -11,6 +11,10 @@ public class Cliente {
 	public Turno getTurno() {
 		return turno;
 	}
+	
+	public void setTurno(Turno turno) {
+		this.turno = turno;
+	}
 
 	public Cliente(String nombre) {
 		super();
@@ -19,7 +23,12 @@ public class Cliente {
 
 	@Override
 	public String toString() {
-		return "Cliente [nombre=" + nombre + ", turno=" + turno + "]";
+		return nombre + "(turno " + turno + ")";
+	}
+
+	@Override
+	public int compareTo(Cliente cliente) {
+		return Integer.valueOf(getTurno().getValor()).compareTo(cliente.getTurno().getValor());
 	}
 
 }
